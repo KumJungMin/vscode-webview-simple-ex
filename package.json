@@ -1,6 +1,6 @@
 {
-  "name": "simplewebview",
-  "displayName": "simpleWebview",
+  "name": "todoView",
+  "displayName": "todoView",
   "description": "view webview simple example",
   "version": "0.0.1",
   "engines": {
@@ -9,12 +9,31 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [ "onView:todoView" ],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "todoView",
+          "title": "Todo",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "todoView": [
+        {
+          "type": "webview",
+          "id": "todoView",
+          "name": "Todo Viewer",
+          "contextualTitle": "CVT"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "simplewebview.helloWorld",
+        "command": "todoView.helloWorld",
         "title": "Hello World"
       }
     ]
